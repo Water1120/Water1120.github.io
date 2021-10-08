@@ -6,21 +6,17 @@
   
   <title>web入门爆破 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="web入门爆破1首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payloads加载字典进去，在处选上Add Prefix加上前缀admin: 和base64-encode，取">
+  <meta name="description" content="web入门爆破1首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payload的payload processing处选上Add Prefix加上前缀admin: 和base6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web入门爆破">
 <meta property="og:url" content="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="web入门爆破1首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payloads加载字典进去，在处选上Add Prefix加上前缀admin: 和base64-encode，取">
+<meta property="og:description" content="web入门爆破1首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payload的payload processing处选上Add Prefix加上前缀admin: 和base6">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/HP/AppData/Roaming/Typora/typora-user-images/image-20211008133853058.png">
-<meta property="og:image" content="c:/Users/HP/AppData/Roaming/Typora/typora-user-images/image-20211008133948559.png">
-<meta property="og:image" content="c:/Users/HP/AppData/Roaming/Typora/typora-user-images/image-20211008134016079.png">
 <meta property="article:published_time" content="2021-10-08T05:41:19.361Z">
-<meta property="article:modified_time" content="2021-10-08T05:53:51.465Z">
+<meta property="article:modified_time" content="2021-10-08T05:56:23.202Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/HP/AppData/Roaming/Typora/typora-user-images/image-20211008133853058.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -99,13 +95,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="web入门爆破1"><a href="#web入门爆破1" class="headerlink" title="web入门爆破1"></a>web入门爆破1</h3><p>首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payloads加载字典进去，在<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211008133853058.png" alt="image-20211008133853058">处选上Add Prefix加上前缀admin: 和base64-encode，取消<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211008133948559.png" alt="image-20211008133948559">的勾选，最后再去options那里<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211008134016079.png" alt="image-20211008134016079">添加ctfshow作为flag查询，最后面开始去爆破，等待后便可得到flag</p>
+        <h3 id="web入门爆破1"><a href="#web入门爆破1" class="headerlink" title="web入门爆破1"></a>web入门爆破1</h3><p>首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payload的payload processing处选上Add Prefix加上前缀admin: 和base64-encode，取消payload ending的勾选，最后再去options那里添加ctfshow作为flag查询，最后面开始去爆破，等待后便可得到flag</p>
 <h3 id="web入门爆破2"><a href="#web入门爆破2" class="headerlink" title="web入门爆破2"></a>web入门爆破2</h3><p>直接寻找软件爆破子域名，之后在vip那个子域名上找到flag</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckuhycbou000184w0h5390k94" data-title="web入门爆破" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckuhyhl3g0002xgw0cgpd9hej" data-title="web入门爆破" class="article-share-link">Share</a>
       
       
       

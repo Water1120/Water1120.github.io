@@ -93,13 +93,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="web入门爆破1"><a href="#web入门爆破1" class="headerlink" title="web入门爆破1"></a>web入门爆破1</h3><p>首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payloads加载字典进去，在<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211008133853058.png" alt="image-20211008133853058">处选上Add Prefix加上前缀admin: 和base64-encode，取消<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211008133948559.png" alt="image-20211008133948559">的勾选，最后再去options那里<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211008134016079.png" alt="image-20211008134016079">添加ctfshow作为flag查询，最后面开始去爆破，等待后便可得到flag</p>
+        <h3 id="web入门爆破1"><a href="#web入门爆破1" class="headerlink" title="web入门爆破1"></a>web入门爆破1</h3><p>首先进入网站发现是要输入账号密码，试着输入账号admin和任意密码使用bp抓包，之后发送响应包查看，发现有一个回应头被base64码加密了，尝试去用base64解码得到admin:123，中间用分号隔开，然后去发送到intruder上，分别选中账号和密码那一栏，之后切换到payload的payload processing处选上Add Prefix加上前缀admin: 和base64-encode，取消payload ending的勾选，最后再去options那里添加ctfshow作为flag查询，最后面开始去爆破，等待后便可得到flag</p>
 <h3 id="web入门爆破2"><a href="#web入门爆破2" class="headerlink" title="web入门爆破2"></a>web入门爆破2</h3><p>直接寻找软件爆破子域名，之后在vip那个子域名上找到flag</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckuhycbou000184w0h5390k94" data-title="web入门爆破" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckuhyhl3g0002xgw0cgpd9hej" data-title="web入门爆破" class="article-share-link">Share</a>
       
       
       
@@ -142,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckuhycbow000284w0b5oea5bg" data-title="web入门信息收集" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckuhyhl3a0001xgw09dsq613z" data-title="web入门信息收集" class="article-share-link">Share</a>
       
       
       
@@ -193,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckuhycbop000084w089dfbhm2" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckuhyhl360000xgw05lsa8x0e" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
