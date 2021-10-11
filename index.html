@@ -71,6 +71,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-命令执行" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" class="article-date">
+  <time class="dt-published" datetime="2021-10-11T00:50:25.780Z" itemprop="datePublished">2021-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/">web入门命令执行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="命令执行1-4"><a href="#命令执行1-4" class="headerlink" title="命令执行1-4"></a>命令执行1-4</h3><h6 id="在一些特定场景里面这些方法都是通用的"><a href="#在一些特定场景里面这些方法都是通用的" class="headerlink" title="在一些特定场景里面这些方法都是通用的"></a>在一些特定场景里面这些方法都是通用的</h6><p>第一个任务里面是屏蔽了flag这个词，首先使用?c=system(‘ls’);来查看目录，还有一个指令是?c=phpinfo();可以查看到php的信息，知道目录之后用?c=system(“cp flag.php 1.txt”);来查看文件，由于它过滤了flag，所以说要用一个符号去替换flag中的字母才可以执行，切换目录之后直接输入1.txt即可查看文件中的flag</p>
+<p>第二个任务里面过滤了flag和system和php这些词，这时候我们可以用顿号来代替system这个字符，而且再用?去代替它过滤的词语，写出来就是?c=<code>cp fla?.??? 1.txt</code>;来直接得到flag文件的目录，然后输入1.txt找到flag</p>
+<p>第三个任务中过滤了一堆字符，这时候使用嵌套eval来执行，该字符可以使得你输入的指令不会受到屏蔽，在下一个任务中也可以用同样的方法，cat指令是查看文件的意思，所以整条指令为?c=eval($_GET[1]);&amp;1=system(‘cat flag.php’);之后执行之后发现是空白，因为是藏在php的文件里面，这时候我们去查看源代码就可以找到flag，第二种方法可以吧cat 改为tac就是反过来读，同样也可以找到flag</p>
+<p>第四个任务同样是屏蔽了一堆字符(有空格和分号)，这时候可以使用上一个方法，还有一个方法就是使用?c=include&amp;0a$_GET[1];&amp;1=/etc/passwd，这时候发现不能执行，因为;已经被过滤了，所以我们使用?&gt;来代替;，而%0a是一个换行符。这时候我们读取了文本文件。然后再修改后面&amp;1=flag.php发现是看不到的，因为他没有输入flag的变量，因为没有;分隔导致无法输出，所以我们要用文件包含来做这个题目，所以我们使用hackbar里面的LFI的插件做，在&amp;1=后面点击插件，再输入flag.php，因为用了插件之后没有过滤了，拿到一串base64的码，在复制到下面点击encoding中的base64 decode解码得到flag</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" data-id="ckulxx1w40003x8w0e4se9k9x" data-title="web入门命令执行" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-爆破" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/10/08/%E7%88%86%E7%A0%B4/" class="article-date">
@@ -99,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckuhyhl3g0002xgw0cgpd9hej" data-title="web入门爆破" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckulxx1vq0002x8w09t08a8x0" data-title="web入门爆破" class="article-share-link">Share</a>
       
       
       
@@ -142,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckuhyhl3a0001xgw09dsq613z" data-title="web入门信息收集" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckulxx1vk0001x8w02nb1cygt" data-title="web入门信息收集" class="article-share-link">Share</a>
       
       
       
@@ -193,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckuhyhl360000xgw05lsa8x0e" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckulxx1v00000x8w0fmrrd7y3" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -234,6 +276,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/">web入门命令执行</a>
+          </li>
         
           <li>
             <a href="/2021/10/08/%E7%88%86%E7%A0%B4/">web入门爆破</a>
