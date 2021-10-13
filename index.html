@@ -101,6 +101,12 @@
 <h3 id="命令执行6"><a href="#命令执行6" class="headerlink" title="命令执行6"></a>命令执行6</h3><p>看题目知道这个题目多过滤了一个冒号，所以可以使用语言结构，语言结构有echo print isset unset include require这些，而phpinfo属于在数据段使用的。所以这里要用?c=include%0a$_GET[1]?&gt;&amp;1=/etc/passwd,进去之后用在&amp;1=后面点击插件，再输入flag.php，因为用了插件之后没有过滤了，拿到一串base64的码，在复制到下面点击encoding中的base64 decode解码得到flag</p>
 <h3 id="命令执行7"><a href="#命令执行7" class="headerlink" title="命令执行7"></a>命令执行7</h3><p>本题目和上两题一样</p>
 <h3 id="命令执行8"><a href="#命令执行8" class="headerlink" title="命令执行8"></a>命令执行8</h3><p>本题过滤数字，吧GET[1]换成GET[a]和&amp;1换成&amp;a之后和上面的题一模一样</p>
+<h3 id="命令执行9"><a href="#命令执行9" class="headerlink" title="命令执行9"></a>命令执行9</h3><p>本题考点是伪协议，所以我们使用data协议去做，在url后面添加?c=data://text/plain,<?php system("mv fla?.php 1.txt");?>之后就复制一个flag文件到1.txt里面，之后再直接访问txt就行</p>
+<h3 id="命令执行10"><a href="#命令执行10" class="headerlink" title="命令执行10"></a>命令执行10</h3><p>本题屏蔽了php，所以上一题的做法不可行，所以吧php改成=号，后面的php换成*号就变成一个短标签，变成这种形式?c=data://text/plain,<?= system("cp fla*.* 1.txt");?>，然后查找1.txt即可</p>
+<h3 id="命令执行11"><a href="#命令执行11" class="headerlink" title="命令执行11"></a>命令执行11</h3><p>首先用?c=data://text/plain,<?=phpinfo();?>来查看一下是否可以使用，可知可以使用之后就输入?c=data://text/plain,<?= system("tac fla*.ph? ");?>得到flag</p>
+<h3 id="命令执行12"><a href="#命令执行12" class="headerlink" title="命令执行12"></a>命令执行12</h3><p>本题增多了屏蔽的符号。第一种方法显示原码show_source(next(array_reverse(scandir(pos(localeconv())))));</p>
+<p>下面是一些函数的作用</p>
+<p>localeconv()：返回一包含本地数字及货币格式信息的数组。其中数组中的第一个为点号(.)<br>pos()：返回数组中的当前元素的值。<br>array_reverse()：数组逆序，将数组转置<br>打印当初路径下文件的函数:print_r(scandir(‘.’))<br>current() 函数返回数组中的当前元素（单元）,默认取第一个值scandir()：获取目录下的文件，pos和它相同<br>next()： 函数将内部指针指向数组中的下一个元素，并输出。<br>因为屏蔽了点号，所以首先使用print_r(scandir(pos(localeconv())));查看打印当前目录，之后因为flag在第三个元素，所以我们使用next和array_reverse函数去输出</p>
 
       
     </div>
