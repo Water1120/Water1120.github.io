@@ -71,6 +71,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MISC" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/10/20/MISC/" class="article-date">
+  <time class="dt-published" datetime="2021-10-20T14:58:01.140Z" itemprop="datePublished">2021-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="MISC入门第一题（ctfshow）"><a href="#MISC入门第一题（ctfshow）" class="headerlink" title="MISC入门第一题（ctfshow）"></a>MISC入门第一题（ctfshow）</h3><p>图片篇（基础操作）1</p>
+<p>第一个直接下载就完事，第二个下载之后发现是文本文件，之后用winhex查看格式，发现是PNG的格式，然后将文件改成PNG的格式</p>
+<h3 id="BUUCTF的MISC"><a href="#BUUCTF的MISC" class="headerlink" title="BUUCTF的MISC"></a>BUUCTF的MISC</h3><h6 id="第一题金三胖，打开之后发现是一个gif格式图，从不断闪过的片段得知是藏有flag，之后使用Stegsolve对图片进行分帧查看才得到flag"><a href="#第一题金三胖，打开之后发现是一个gif格式图，从不断闪过的片段得知是藏有flag，之后使用Stegsolve对图片进行分帧查看才得到flag" class="headerlink" title="第一题金三胖，打开之后发现是一个gif格式图，从不断闪过的片段得知是藏有flag，之后使用Stegsolve对图片进行分帧查看才得到flag"></a>第一题金三胖，打开之后发现是一个gif格式图，从不断闪过的片段得知是藏有flag，之后使用Stegsolve对图片进行分帧查看才得到flag</h6><p>第二题二维码，首先拿到文件是一个二维码，用二维码查看工具发现里面并无flag，然后去虚拟机kali里面binwalk 图片文件，之后发现有一个zip，使用dd if=QR_code.png of=flag.zip skip=471 bs=1将图片分离到flag.zip里面，然后拖出来得到zip爆破密码得到flag</p>
+<p>第三题你竟然拒绝我，本题拿到文件之后使用winhex打开，在最后面找到flag</p>
+<p>第四题N种方法解决，下载之后发现是exe文件打不开，转成TXT之后发现里面有base64的码，在线解码得到二维码，之后得到flag</p>
+<p>第五题大白，一张不完整png，拖入010editor，提示crc错误，使用脚本跑出图片宽高为679*479，修改高度之后得到flag</p>
+<p>第六题基础破解，解压得到一个rar包，4位纯数字爆破得到密码打开得到一段base64码之后解密得到flag</p>
+<p>第七题乌镇峰会，下载之后用winhex打开之后找到flag</p>
+<p>第八题LSB，用Stegsolve打开之后去调节图片隐写之后得到flag</p>
+<p>第九题zip伪加密，下载之后发现爆破无法解密，之后用010editor打开之后在两个0900处修改0000之后保存就能打开了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/20/MISC/" data-id="ckuzouqbx0000qow01dc5d0km" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-命令执行" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" class="article-date">
@@ -111,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" data-id="ckunpemmt0003n4w0fz6x3jr1" data-title="web入门命令执行" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" data-id="ckuzouqc70004qow0ef1vb42u" data-title="web入门命令执行" class="article-share-link">Share</a>
       
       
       
@@ -151,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckunpemmh0000n4w05153cx2j" data-title="web入门爆破" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckuzouqc60003qow0guyl3h83" data-title="web入门爆破" class="article-share-link">Share</a>
       
       
       
@@ -194,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckunpemmn0001n4w05ek0ailw" data-title="web入门信息收集" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckuzouqc30001qow023caaymz" data-title="web入门信息收集" class="article-share-link">Share</a>
       
       
       
@@ -245,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckunpemmp0002n4w0fkb81mcj" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckuzouqc50002qow00ltyds33" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -286,6 +324,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/10/20/MISC/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/">web入门命令执行</a>
