@@ -14,7 +14,7 @@
 <meta property="og:description" content="MISC入门第一题（ctfshow）图片篇（基础操作）1 第一个直接下载就完事，第二个下载之后发现是文本文件，之后用winhex查看格式，发现是PNG的格式，然后将文件改成PNG的格式 BUUCTF的MISC第一题金三胖，打开之后发现是一个gif格式图，从不断闪过的片段得知是藏有flag，之后使用Stegsolve对图片进行分帧查看才得到flag第二题二维码，首先拿到文件是一个二维码，用二维码查看">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-20T14:58:01.140Z">
-<meta property="article:modified_time" content="2021-10-20T15:46:14.438Z">
+<meta property="article:modified_time" content="2021-10-21T08:12:08.870Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -95,11 +95,14 @@
 <p>第七题乌镇峰会，下载之后用winhex打开之后找到flag</p>
 <p>第八题LSB，用Stegsolve打开之后去调节图片隐写之后得到flag</p>
 <p>第九题zip伪加密，下载之后发现爆破无法解密，之后用010editor打开之后在两个0900处修改0000之后保存就能打开了</p>
+<p>第十题文件中的密码，拿到文件后直接用winhex打开找到一串相似flag的字符串，包裹之后就是flag</p>
+<p>第十一题wireshark，下载文件得到一个流量包，打开wireshark之后对其过滤http过滤出POST包，使用这条命令http.request.method==POST，之后追踪TCP流之后得到flag</p>
+<p>第十二题rar，下载得到压缩包直接爆破完事</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/20/MISC/" data-id="ckv0myq070000isw0c0th8tk0" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/20/MISC/" data-id="ckv50ba900000egw0cofc42e3" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -159,6 +162,10 @@
       <ul>
         
           <li>
+            <a href="/2021/10/24/web%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/10/21/%E6%A0%A1%E8%B5%9B%E9%A2%98%E7%9B%AE/">(no title)</a>
           </li>
         
@@ -172,10 +179,6 @@
         
           <li>
             <a href="/2021/10/08/%E7%88%86%E7%A0%B4/">web入门爆破</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/06/web%E5%85%A5%E9%97%A8/">web入门信息收集</a>
           </li>
         
       </ul>

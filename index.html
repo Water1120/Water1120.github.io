@@ -71,6 +71,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-web入门之文件包含" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/10/24/web%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="article-date">
+  <time class="dt-published" datetime="2021-10-24T07:47:25.130Z" itemprop="datePublished">2021-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>web入门之文件包含</p>
+<p>第一题无过滤，直接?file=伪协议包含base64编码=flag.php，得到一串base64编码复制下来解码得到flag</p>
+<p>第二题过滤了php，将PHP替换成了???，之后我们使用data协议?flie=data//text/plain,<?=eval($_POST[1]);?> 然后点enable post，输入1=phpinfo();  发现可以绕过过滤，然后直接读文件，1=system(“tac flag.php”)</p>
+<p>第三题多过滤了一个data，这时候我们可以使用直接包含日志，直接加入一个在UA里面，Value为<?php eval($_POST[1]);?> 插入之后点掉ua格子 在url上面输入?file=/var/log/nginx/access.log</p>
+<p>点开enable post 输入1=system(’tac flag.php‘);之后没有发现东西，这时候查看一下目录，1=system(’ls‘); 发现文件名字有改动，把flag改为fl0g即可</p>
+<p>第四题多过滤了冒号，我们同样是直接包含日志，添加一个ua，在value里面输入<?=eval($_POST[1]);?> 之后添加进去，然后再url后面输入文件位置?file=/var/log/nginx/access.log之后点击enable post 输入1=phpinfo(); 查看能否进去，之后输入1=system(‘ls’); 查看文件，最后输入1=system(‘tac fl0g.php’);打开得到flag</p>
+<p>第五题多过滤了一个点，这次要使用包含无后缀的一个文件session，后面不会做了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/24/web%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" data-id="ckv50ba9f0006egw0a44i10s0" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-校赛题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/10/21/%E6%A0%A1%E8%B5%9B%E9%A2%98%E7%9B%AE/" class="article-date">
@@ -92,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/21/%E6%A0%A1%E8%B5%9B%E9%A2%98%E7%9B%AE/" data-id="ckv0myq110005isw03qdsgzd8" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/21/%E6%A0%A1%E8%B5%9B%E9%A2%98%E7%9B%AE/" data-id="ckv50ba990004egw033ayezf2" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -126,11 +161,14 @@
 <p>第七题乌镇峰会，下载之后用winhex打开之后找到flag</p>
 <p>第八题LSB，用Stegsolve打开之后去调节图片隐写之后得到flag</p>
 <p>第九题zip伪加密，下载之后发现爆破无法解密，之后用010editor打开之后在两个0900处修改0000之后保存就能打开了</p>
+<p>第十题文件中的密码，拿到文件后直接用winhex打开找到一串相似flag的字符串，包裹之后就是flag</p>
+<p>第十一题wireshark，下载文件得到一个流量包，打开wireshark之后对其过滤http过滤出POST包，使用这条命令http.request.method==POST，之后追踪TCP流之后得到flag</p>
+<p>第十二题rar，下载得到压缩包直接爆破完事</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/20/MISC/" data-id="ckv0myq070000isw0c0th8tk0" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/20/MISC/" data-id="ckv50ba900000egw0cofc42e3" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -182,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" data-id="ckv0myq0i0001isw007dhew7h" data-title="web入门命令执行" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/11/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" data-id="ckv50ba980003egw0b3jq9h6j" data-title="web入门命令执行" class="article-share-link">Share</a>
       
       
       
@@ -222,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckv0myq0x0004isw080fp1nvn" data-title="web入门爆破" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/08/%E7%88%86%E7%A0%B4/" data-id="ckv50ba9f0005egw00f2c3sx3" data-title="web入门爆破" class="article-share-link">Share</a>
       
       
       
@@ -265,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckv0myq0m0002isw07etfbkia" data-title="web入门信息收集" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/06/web%E5%85%A5%E9%97%A8/" data-id="ckv50ba970002egw04a098jel" data-title="web入门信息收集" class="article-share-link">Share</a>
       
       
       
@@ -316,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckv0myq0r0003isw0h9xz9dof" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/09/30/hello-world/" data-id="ckv50ba950001egw0gszg32ir" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -359,6 +397,10 @@
       <ul>
         
           <li>
+            <a href="/2021/10/24/web%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/10/21/%E6%A0%A1%E8%B5%9B%E9%A2%98%E7%9B%AE/">(no title)</a>
           </li>
         
@@ -372,10 +414,6 @@
         
           <li>
             <a href="/2021/10/08/%E7%88%86%E7%A0%B4/">web入门爆破</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/06/web%E5%85%A5%E9%97%A8/">web入门信息收集</a>
           </li>
         
       </ul>
